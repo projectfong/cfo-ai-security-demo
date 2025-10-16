@@ -1,0 +1,19 @@
+# -------------------------------------------------------
+# docker-compose.yml
+# -------------------------------------------------------
+# Author: projectfong
+# Copyright (c) 2025 Fong
+# All Rights Reserved
+# -------------------------------------------------------
+
+services:
+  api:
+    build: .
+    image: cfo-ai-security-demo:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - EVIDENCE_ROOT=/evidence
+    volumes:
+      - ./evidence:/evidence
+    restart: unless-stopped
